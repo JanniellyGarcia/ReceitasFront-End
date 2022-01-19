@@ -1,0 +1,167 @@
+:root {
+    --accent-color: #d55;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #007BFF;
+    border-radius: 50px;
+}
+.titulo{
+    margin-block: 50px;
+    text-align: center;
+    color: #007BFF;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.cards .cards_item {
+    display: flex;
+    padding: 1rem;
+}
+@media (min-width: 40rem) {
+    .cards .cards_item {
+        width: 50%;
+   }
+}
+@media (min-width: 56rem) {
+    .cards .cards_item {
+        width: 33.3333%;
+   }
+}
+.cards .cards_item .card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    background: repeating-linear-gradient(-25deg, #fff, #fff 1px, #fbfbfb 1px, #fbfbfb 3px);
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+.cards .cards_item .card .card_image {
+    position: relative;
+}
+.cards .cards_item .card .card_image::after {
+    position: absolute;
+    height: 75%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.4));
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.cards .cards_item .card .card_image img {
+    width: 100%;
+    display: block;
+}
+.cards .cards_item .card .card_image .price {
+    --price-tag-height: 2rem;
+    --price-tag-bg: yellow;
+    position: absolute;
+    height: var(--price-tag-height);
+    right: 50%;
+    bottom: 0;
+    transform: translate(50%, 20px) rotate(2deg);
+    background-color: var(--price-tag-bg);
+    padding: 0.25rem 0.75rem 0.25rem 0.3em;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    font-family: "Average", serif;
+    font-size: 26px;
+    color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+.cards .cards_item .card .card_image .price span {
+    font-size: 0.7em;
+    margin-bottom: 7px;
+}
+.cards .cards_item .card .card_image .price::before, .cards .cards_item .card .card_image .price::after {
+    position: absolute;
+    background-color: green;
+    background-color: var(--price-tag-bg);
+    border-radius: 50%;
+    width: calc(var(--price-tag-height) / 2.2);
+    height: calc(var(--price-tag-height) / 1.5);
+    content: "";
+}
+.cards .cards_item .card .card_image .price::before {
+    left: 0;
+    transform: translate(-50%, 0px);
+}
+.cards .cards_item .card .card_image .price::after {
+    right: 0;
+    transform: translate(50%, 0px);
+}
+.cards .cards_item .card .card_image .card_title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    padding: 1.5rem 2rem;
+    font-family: "Mansalva", cursive;
+    color: white;
+    font-size: 32px;
+    width: 75%;
+    line-height: 1;
+    z-index: 2;
+    transform: rotate(-2deg);
+}
+.cards .cards_item .card .card_content {
+    padding: 3em 2em 2em;
+    font-family: "Average", serif;
+    color: #333;
+    letter-spacing: 0.2px;
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.cards .cards_item .card .card_content .card_notes {
+    float: right;
+    margin: 1em 0 1em 1em;
+}
+.cards .cards_item .card .card_content .card_notes .note {
+    font-size: 0.8em;
+    font-weight: 400;
+    padding: 0.5em;
+    background-color: #ccc;
+    color: white;
+    text-transform: uppercase;
+}
+.cards .cards_item .card .card_content .card_text p {
+    margin: 0 0 1em;
+}
+.cards .cards_item .card .card_content .card_text p:not(:last-child) {
+    position: relative;
+    padding-bottom: 20px;
+    border: none;
+    border-bottom: medium double #d8d8d8;
+}
+.cards .cards_item .card .card_content .card_text p:first-child::first-letter {
+    font-size: 3.5rem;
+    margin: 11px 0 -5px 0;
+    padding: 0 0.1em 0 0;
+    height: 0.7em;
+    line-height: 0.55em;
+    float: left;
+    color: var(--accent-color);
+}
+.cards .cards_item .card .card_content .card_text i {
+    font-family: "Mansalva", cursive;
+    color: var(--accent-color);
+    font-size: 1.05em;
+    margin: 0 0.1em;
+}

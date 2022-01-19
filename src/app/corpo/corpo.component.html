@@ -1,0 +1,23 @@
+<div class="titulo"> <h1 class="card_title" id="titulo">Mais de {{(recipes.length)-1}} receitas para você!</h1> </div>
+
+<div class="Container">
+  <div class="main" >
+    <ul class="cards" *ngFor="let recipe of recipes">
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="https://img.elo7.com.br/product/main/1F6ACCE/caderno-de-receitas-receitas.jpg" alt="mixed vegetable salad in a mason jar. ">
+            <div class="price"> F<span>ácil</span></div>
+            <h2 class="card_title">{{recipe.title}}</h2>
+          </div>
+          <div class="card_content">
+            <h1>Ingredientes:</h1>
+            <div  *ngFor=" let ing of recipe.ingredients.split(',')">
+              <li class="list-group-item"> {{ing}} <li>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
